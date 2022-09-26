@@ -1,6 +1,11 @@
-def changetoint(str):
-    num_str=str(input())#input data in string format
-    str_to_int=int(num_str)#convert string to int
-    return str_to_int
+def convertstr(f):
+    def f1(str):
+        str1 = int(str)
+        return f(str1)
+    return f1
 
-print(changetoint(str))
+@convertstr
+def finalfun(str):
+   return str
+
+print(finalfun('12545'))
